@@ -1,0 +1,190 @@
+/* ==========================================================================
+   CONFIGURACIÓ INICIAL I VARIABLES
+   ========================================================================== */
+/* CONFIGURACIÓ INICIAL (ESTIL ABLETON) */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-text: #000000;
+    --color-bg: #ffffff;
+    --color-accent: #0000ff;
+    /* El blau elèctric típic de la marca */
+    --color-light-gray: #f3f3f3;
+    --color-yellow-box: #fbffa7;
+    /* El groc pastís de fons que usen de vegades */
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Ableton utilitza un menú secundari en algunes pàgines, però per al teu header farem un estil net */
+header {
+    border-bottom: 2px solid var(--color-light-gray);
+    padding: 1.5rem 2rem;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+header a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+header a:hover {
+    color: var(--color-accent);
+}
+
+/* ==========================================================================
+   CONTINGUT PRINCIPAL (HERO i CARDS)
+   ========================================================================== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* SECCIÓ HERO */
+.hero {
+    padding: 8vw 4vw;
+    /* Espaiat fluid basat en l'ample de pantalla */
+    text-align: left;
+    /* Ableton sol alinear a l'esquerra o centrar molt net */
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    /* Text molt gran i potent */
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+}
+
+.hero p {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    line-height: 1.4;
+    color: #555555;
+    margin-bottom: 2rem;
+}
+
+.hero button {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.hero button:hover {
+    background-color: #0000cd;
+}
+
+/* SECCIÓ DE TARGETES / BLOCS */
+.cards-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.cards-container h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+/* Mobile-First: Una columna */
+.grid-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    /* Espai gran entre blocs, com a Ableton */
+}
+
+.card {
+    padding: 3rem 2rem;
+    background-color: var(--color-light-gray);
+    /* Fons gris homogeni */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Per fer el joc de colors d'Ableton, farem que la segona targeta tingui el fons groc clàssic d'ells */
+.card:nth-child(2) {
+    background-color: var(--color-yellow-box);
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.card p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.card a {
+    color: var(--color-accent);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER SIMPLE I FOSC */
+footer {
+    margin-top: 8rem;
+    padding: 4rem 2rem;
+    border-top: 2px solid var(--color-light-gray);
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+/* PANTALLES GRANS */
+@media (min-width: 768px) {
+    header ul {
+        justify-content: flex-start;
+        /* Menú a l'esquerra com Ableton */
+    }
+
+    .grid-cards {
+        /* Dues columnes perfectes */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        /* Més espai en desktop */
+    }
+
+    .card {
+        padding: 5rem 4rem;
+        /* Espais molt amplis interns */
+    }
+}
