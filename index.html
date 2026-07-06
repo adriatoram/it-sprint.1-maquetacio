@@ -1,12 +1,53 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tittle name</title>
-    <!-- Aquí likeas tu html con tu css -->
-  </head>
-  <body>
-    <!-- Aquí va tu esqueleto HTML -->
-  </body>
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <nav aria-label="Navegació principal">
+      <ul>
+        <li> <a href="#">Inici</a></li>
+        <li> <a href="#">Serveis</a></li>
+        <li> <a href="#">Contactes</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <main aria-label="Contingut principal de l'aplicació web adaptativa">
+    <section class="hero">
+      <h1> Benvingut a la nostra aplicació accessible</h1>
+      <p> Aquesta pàgina esta dissenyada amb CSS Grid i Flexbox seguint l'estratègia Mobile-first</p>
+      <button>Comença ara</button>
+    </section>
+
+    <section class="cards-container">
+      <h2>Els nostres serveis</h2>
+      <div class="grid-cards">
+        <article class="card">
+          <h3>Servei 1</h3>
+          <p>Descripció curta del servei que oferim en aquesta cel·la.</p>
+          <a href="#">Més informació</a>
+        </article>
+        <article class="card">
+          <h3>Servei 2</h3>
+          <p>Descripció curta del servei que oferim en aquesta cel·la.</p>
+          <a href="#">Més informació</a>
+        </article>
+      </div>
+    </section>
+
+
+  </main>
+  <footer>
+    <p>&copy; 2026 La meva Aplicació Accessible. Tots els drets reservats.</p>
+  </footer>
+</body>
+
 </html>
