@@ -14,16 +14,35 @@
 
 <body>
   <header>
-    <div class="logo">Ableton</div>
-    <nav aria-label="Navegació principal">
-      <ul>
-        <li> <a href="#">Inici</a></li>
-        <li> <a href="#">Serveis</a></li>
-        <li> <a href="#">Contactes</a></li>
-        <li> <a href="#">Sobre Nosaltres</a></li>
+    <div class="header-left">
+      <a href="#" class="logo" aria-label="Ableton ">
+        Ableton
+      </a>
+      <nav aria-label="Navegació principal">
+        <ul>
+          <li> <a href="#">Live</a></li>
+          <li> <a href="#">Push</a></li>
+          <li> <a href="#">Note</a></li>
+          <li> <a href="#">Link</a></li>
+          <li> <a href="#">Shop</a></li>
+          <li><a href="#" class="active">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-rigth">
+      <a href="#" class="losgin-link">Iniciar sesión</a>
+    </div>
+    <nav class="submenu" aria-label="Navegació del BLog">
+      <div class="submenu-container">
+        <a href="#" class="submenu-title"> Blog</a>
 
-
-      </ul>
+        <ul class="submenu-links">
+          <li> <a href="#" class="active"></a>></li>
+          <li> <a href="#">Loop</a></li>
+          <li> <a href="#">Stories</a></li>
+          <li> <a href="#">Vídeos</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -38,15 +57,30 @@
     <section class="cards-container">
       <h2>Els nostres serveis</h2>
       <div class="grid-cards">
+
         <article class="card">
-          <h3>Servei 1</h3>
-          <p>Descripció curta del servei que oferim en aquesta cel·la.</p>
-          <a href="#">Més informació</a>
+          <div class="card-image-wrapper">
+            <img src="https://images.pexels.com/photos/12752470/pexels-photo-12752470.jpeg"
+              alt="Un home amb una taula de mescles">
+          </div>
+          <div class="card-content">
+            <span class="card-category">Loop</span>
+            <h3>Servei 1</h3>
+            <p>Descripció curta del servei que oferim en aquesta cel·la.</p>
+            <a href="#">Més informació</a>
+          </div>
         </article>
+
         <article class="card">
-          <h3>Servei 2</h3>
-          <p>Descripció curta del servei que oferim en aquesta cel·la.</p>
-          <a href="#">Més informació</a>
+          <div class="card-image-wrapper">
+            <img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg" alt="Un altre estudi de música">
+          </div>
+          <div class="card-content">
+            <span class="card-category">Stories</span>
+            <h3>Servei 2</h3>
+            <p>Descripció curta del servei que oferim en aquesta cel·la.</p>
+            <a href="#">Més informació</a>
+          </div>
         </article>
       </div>
     </section>

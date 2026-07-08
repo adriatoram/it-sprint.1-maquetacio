@@ -33,33 +33,98 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
     border-bottom: 2px solid var(--color-light-gray);
     padding: 1.2rem 1.5rem;
+    background-color: var(--color-bg);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    /* Espai entre el Logo i el Menú */
 }
 
 .logo {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    color: var(--color-text);
+    text-decoration: none;
+    letter-spacing: -0.03em;
 }
 
 header ul {
     list-style: none;
     display: flex;
-    gap: 1.1rem;
+    gap: 1.5rem;
     font-weight: 600;
-    font-size: 0.5rem;
+    font-size: 0.55rem;
 }
 
 header a {
     color: var(--color-text);
     text-decoration: none;
     white-space: nowrap;
+    text-decoration: none;
+    font-size: 0.55rem;
+    font-weight: 600;
+    /* Lletra gruixuda, típica d'ells */
+    transition: color 0.15s ease;
 }
 
 header a:hover {
-    color: var(--color-accent);
+    color: #ff4500;
+}
+
+/* Estil per saber en quina secció estem */
+header a.active {
+    color: #ff4500;
+}
+
+.header-right .login-link {
+    font-size: 0.55rem;
+    color: var(--color-text);
+}
+
+.submenu {
+    border-bottom: 1px solid var(--color-light-gray);
+    /* Línia més fina que el header principal */
+    background-color: rgba (255, 255, 255, 0.95);
+    padding: 1rem 1.5rem;
+}
+
+.submenu-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submenu-title {
+    font-weight: 700;
+    font-size: 1.1 rem;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.submenu-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.submenu-links a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.submenu-links a:hover {
+    color: var(--color-accent)
 }
 
 /* ==========================================================================
@@ -170,6 +235,16 @@ main {
     text-decoration: underline;
 }
 
+/* Això farà que la imatge s'adapti sempre a l'article */
+.card-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Treu un petit espai en blanc que deixen les imatges a baix */
+    object-fit: cover;
+    /* Si li dones una altura fixa, retallarà sense deformar */
+}
+
 /* FOOTER SIMPLE I FOSC */
 footer {
     margin-top: 8rem;
@@ -185,25 +260,34 @@ footer {
     header {
         flex-direction: row;
         /*  desktop: logo i menú en fila */
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
-        gap: 3rem;
+        gap: 1rem;
     }
+
 
     header ul {
+        flex-wrap: wrap;
         justify-content: flex-start;
         /* Menú a l'esquerra com Ableton */
+        gap: 1.5rem;
     }
 
-    .grid-cards {
-        /* Dues columnes perfectes */
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4rem;
-        /* Més espai en desktop */
+    .header-right {
+        align-self: auto;
+        /* El login es queda a sota a la dreta */
     }
+}
 
-    .card {
-        padding: 5rem 4rem;
-        /* Espais molt amplis interns */
-    }
+.grid-cards {
+    /* Dues columnes perfectes */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    /* Més espai en desktop */
+}
+
+.card {
+    padding: 5rem 4rem;
+    /* Espais molt amplis interns */
+}
 }
