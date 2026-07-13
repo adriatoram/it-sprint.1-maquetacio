@@ -4,10 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Afegim una descripció real per al SEO -->
   <meta name="description"
     content="Exercici de maquetació adaptativa inspirat en el disseny d'Ableton per a IT Academy.">
-  <!-- Canviem el títol genèric per un de real -->
   <title>Ableton - Maquetació Adaptativa i Accessible</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,7 +14,7 @@
   <header>
     <div class="header-left">
       <a href="#" class="logo" aria-label="Ableton ">
-        Ableton
+        <img src="https://i.pinimg.com/1200x/16/38/ff/1638ff96adba5a5dab27feea86905c03.jpg" alt="Logo d'Ableton">
       </a>
       <nav aria-label="Navegació principal">
         <ul>
@@ -32,32 +30,108 @@
     <div class="header-rigth">
       <a href="#" class="losgin-link">Iniciar sesión</a>
     </div>
-    <nav class="submenu" aria-label="Navegació del BLog">
-      <div class="submenu-container">
-        <a href="#" class="submenu-title"> Blog</a>
-
-        <ul class="submenu-links">
-          <li> <a href="#" class="active"></a>></li>
-          <li> <a href="#">Loop</a></li>
-          <li> <a href="#">Stories</a></li>
-          <li> <a href="#">Vídeos</a></li>
-        </ul>
-      </div>
-    </nav>
   </header>
 
-  <main aria-label="Contingut principal de l'aplicació web adaptativa">
-    <section class="hero">
-      <h1> Benvingut a la nostra aplicació accessible</h1>
-      <p> Aquesta pàgina esta dissenyada amb CSS Grid i Flexbox seguint l'estratègia Mobile-first</p>
-      <button>Comença ara</button>
+  <nav class="submenu" aria-label="Navegació del BLog">
+    <div class="submenu-container">
+      <a href="#" class="submenu-title"> All posts</a>
+      <ul class="submenu-links">
+        <li> <a href="#" class="active"></a></li>
+        <li> <a href="#">Artists</a></li>
+        <li> <a href="#">News</a></li>
+        <li> <a href="#">Downloads</a></li>
+        <li> <a href="#">Loop</a></li>
+        <li> <a href="#">Vídeos</a></li>
+      </ul>
+    </div>
+  </nav>
 
+  <main aria-label="Contingut principal de l'aplicació web adaptativa">
+
+    <section class="hero-section">
+      <h2 class="section-title">Novetats d'Ableton</h2>
+
+      <div class="hero-grid">
+        <article class="hero-card">
+          <div class="hero-card-image">
+            <img src="https://images.pexels.com/photos/7173393/pexels-photo-7173393.jpeg"
+              alt="Sintetitzador en un estudi de música fosc">
+          </div>
+          <div class="hero-card-content">
+            <span class="hero-category">Notícies</span>
+            <h3>El futur de la producció musical: Nous horitzons digitals</h3>
+            <p> Explorem com les noves outils de programari estan canviant la manera en què els artistes componen,
+              col·laboren i comparteixen la seva música arreu del món.</p>
+          </div>
+        </article>
+
+        <article class="hero-card">
+          <div class="hero-card-image">
+            <img src="https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg" alt="Estudi de gravació">
+          </div>
+          <div class="hero-card-content">
+            <span class="card-tag">Loop</span>
+            <h3>Converses sobre ritme: El llegat de la caixa de ritmes</h3>
+            <p>Productors d'arreu del món comparteixen la seva passió pels patrons clàssics.</p>
+          </div>
+        </article>
+
+        <article class="hero-card">
+          <div class="hero-card-image">
+            <img src="https://images.pexels.com/photos/164745/pexels-photo-164745.jpeg" alt="Teclat controlador">
+          </div>
+          <div class="hero-card-content">
+            <span class="card-tag">Vídeos</span>
+            <h3>A l'estudi amb James Holden: Modulars i llibertat</h3>
+            <p>Descobreix com el productor britànic construeix el seu directe experimental.</p>
+          </div>
+        </article>
+
+        <article class="hero-card">
+          <div class="hero-card-image">
+            <img src="https://images.pexels.com/photos/7097817/pexels-photo-7097817.jpeg"
+              alt="Dues persones produint música">
+          </div>
+          <div class="hero-card-content">
+            <span class="hero-category">Aprèn</span>
+            <h3>Aprén a produir amb Ableton</h3>
+            <p> Mini-curs per aprendre a fer servir Ableton.</p>
+          </div>
+        </article>
+
+        <article class="hero-card">
+          <div class="hero-card-image">
+            <img src="https://images.pexels.com/photos/7088373/pexels-photo-7088373.jpeg"
+              alt="Una cantant enmig d'un estudi de gravació">
+          </div>
+          <div class="hero-card-content">
+            <span class="hero-category">Entrevista</span>
+            <h3>Gravació en estudi: Bases d'una bona mescla</h3>
+            <p> Entresvita a Josh Climent, tecnic de so d'estudi, ens explica quines bases fa servir a les seves
+              mescles.</p>
+          </div>
+        </article>
+
+        <article class="hero-card">
+          <div class="hero-card-image">
+            <img src="https://images.pexels.com/photos/34263982/pexels-photo-34263982.jpeg" alt="Acordeo antiga">
+          </div>
+          <div class="hero-card-content">
+            <span class="hero-category">Notícies</span>
+            <h3>El passat de la producció musical: Analògic wins</h3>
+            <p> Un viatge pels antics instruments que van sorgir dels carrers</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="load-more-container">
+        <button class="load-more-btn">Carga más</button>
+      </div>
     </section>
 
     <section class="cards-container">
       <h2>Els nostres serveis</h2>
       <div class="grid-cards">
-
         <article class="card">
           <div class="card-image-wrapper">
             <img src="https://images.pexels.com/photos/12752470/pexels-photo-12752470.jpeg"
@@ -73,7 +147,7 @@
 
         <article class="card">
           <div class="card-image-wrapper">
-            <img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg" alt="Un altre estudi de música">
+            <img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg" alt="Un XML d'estudi de música">
           </div>
           <div class="card-content">
             <span class="card-category">Stories</span>
@@ -84,7 +158,6 @@
         </article>
       </div>
     </section>
-
 
   </main>
   <footer>

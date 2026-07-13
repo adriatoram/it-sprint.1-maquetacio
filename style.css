@@ -1,7 +1,6 @@
 /* ==========================================================================
    CONFIGURACIÓ INICIAL I VARIABLES
    ========================================================================== */
-/* CONFIGURACIÓ INICIAL (ESTIL ABLETON) */
 *,
 *::before,
 *::after {
@@ -14,10 +13,8 @@
     --color-text: #000000;
     --color-bg: #ffffff;
     --color-accent: #0000ff;
-    /* El blau elèctric típic de la marca */
     --color-light-gray: #f3f3f3;
     --color-yellow-box: #fbffa7;
-    /* El groc pastís de fons que usen de vegades */
 }
 
 html {
@@ -28,7 +25,6 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Ableton utilitza un menú secundari en algunes pàgines, però per al teu header farem un estil net */
 header {
     display: flex;
     flex-direction: column;
@@ -44,15 +40,21 @@ header {
     display: flex;
     align-items: center;
     gap: 2rem;
-    /* Espai entre el Logo i el Menú */
 }
 
 .logo {
+    height: 25px;
+    width: auto;
     font-weight: 700;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     color: var(--color-text);
     text-decoration: none;
     letter-spacing: -0.03em;
+}
+
+.logo img {
+    height: 25px;
+    width: auto;
 }
 
 header ul {
@@ -60,38 +62,32 @@ header ul {
     display: flex;
     gap: 1.5rem;
     font-weight: 600;
-    font-size: 0.55rem;
+    font-size: 0.35rem;
 }
 
 header a {
     color: var(--color-text);
     text-decoration: none;
     white-space: nowrap;
-    text-decoration: none;
-    font-size: 0.55rem;
+    font-size: 0.35rem;
     font-weight: 600;
-    /* Lletra gruixuda, típica d'ells */
     transition: color 0.15s ease;
 }
 
-header a:hover {
-    color: #ff4500;
-}
-
-/* Estil per saber en quina secció estem */
+header a:hover,
 header a.active {
     color: #ff4500;
 }
 
 .header-right .login-link {
-    font-size: 0.55rem;
+    font-size: 0.35rem;
     color: var(--color-text);
+    text-decoration: none;
 }
 
 .submenu {
     border-bottom: 1px solid var(--color-light-gray);
-    /* Línia més fina que el header principal */
-    background-color: rgba (255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 1rem 1.5rem;
 }
 
@@ -99,15 +95,16 @@ header a.active {
     max-width: 1300px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 1.5rem;
 }
 
 .submenu-title {
-    font-weight: 700;
-    font-size: 1.1 rem;
+    font-weight: 600;
+    font-size: 0.35rem;
     text-decoration: none;
-    color: var(--color-text);
+    color: #ff4500;
 }
 
 .submenu-links {
@@ -119,12 +116,13 @@ header a.active {
 .submenu-links a {
     text-decoration: none;
     color: var(--color-text);
-    font-size: 0.9rem;
+    font-size: 0.35rem;
     font-weight: 600;
 }
 
-.submenu-links a:hover {
-    color: var(--color-accent)
+.submenu-links a:hover,
+.submenu-links a.active {
+    color: #ff4500;
 }
 
 /* ==========================================================================
@@ -136,48 +134,91 @@ main {
     padding: 2rem 1rem;
 }
 
-/* SECCIÓ HERO */
-.hero {
-    padding: 8vw 4vw;
-    /* Espaiat fluid basat en l'ample de pantalla */
-    text-align: left;
-    /* Ableton sol alinear a l'esquerra o centrar molt net */
-    max-width: 800px;
-    margin: 0 auto 4rem auto;
+.hero-section {
+    max-width: 1300px;
+    margin: 3rem auto 5rem auto;
+    padding: 0 1.5rem;
 }
 
-.hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    /* Text molt gran i potent */
+.section-title {
+    font-size: 1rem;
     font-weight: 700;
-    line-height: 1.1;
+    margin-bottom: 2rem;
     letter-spacing: -0.02em;
-    margin-bottom: 2rem;
 }
 
-.hero p {
-    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-    line-height: 1.4;
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.hero-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: transparent;
+}
+
+.hero-card-image img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-tag,
+.hero-category {
+    font-size: 0.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.hero-card h3 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-text);
+}
+
+.hero-card p {
+    font-size: 0.45rem;
     color: #555555;
-    margin-bottom: 2rem;
+    line-height: 1.5;
 }
 
-.hero button {
-    background-color: var(--color-accent);
-    color: white;
+/* 🌟 CONFIGURACIÓ NETA DEL BOTÓ BLAU SÒLID ("Carga más") */
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5rem;
+    width: 100%;
+}
+
+.load-more-btn {
+    background-color: #0000ff;
+    color: #ffffff;
     border: none;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
+    padding: 0.8rem 2.5rem;
+    font-size: 0.55rem;
+    /* Adaptat a la teva escala */
+    font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.15s ease;
 }
 
-.hero button:hover {
-    background-color: #0000cd;
+.load-more-btn:hover {
+    background-color: #0000b3;
 }
 
-/* SECCIÓ DE TARGETES / BLOCS */
+/* SECCIÓ DE TARGETES / SERVEIS */
 .cards-container {
     max-width: 1300px;
     margin: 0 auto;
@@ -190,31 +231,28 @@ main {
     font-weight: 700;
 }
 
-/* Mobile-First: Una columna */
 .grid-cards {
     display: grid;
     grid-template-columns: 1fr;
     gap: 3rem;
-    /* Espai gran entre blocs, com a Ableton */
 }
 
 .card {
     padding: 3rem 2rem;
     background-color: var(--color-light-gray);
-    /* Fons gris homogeni */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 1.5rem;
 }
 
-/* Per fer el joc de colors d'Ableton, farem que la segona targeta tingui el fons groc clàssic d'ells */
 .card:nth-child(2) {
     background-color: var(--color-yellow-box);
 }
 
 .card h3 {
-    font-size: 1.8rem;
+    font-size: 0.75rem;
     font-weight: 700;
 }
 
@@ -224,28 +262,25 @@ main {
     line-height: 1.6;
 }
 
-.card a {
+.card a,
+.card-content a {
     color: var(--color-accent);
+    text-align: center;
     font-weight: 600;
-    display: inline-flex;
-    align-items: center;
+    text-decoration: none;
 }
 
 .card a:hover {
     text-decoration: underline;
 }
 
-/* Això farà que la imatge s'adapti sempre a l'article */
 .card-image-wrapper img {
     width: 100%;
     height: auto;
     display: block;
-    /* Treu un petit espai en blanc que deixen les imatges a baix */
     object-fit: cover;
-    /* Si li dones una altura fixa, retallarà sense deformar */
 }
 
-/* FOOTER SIMPLE I FOSC */
 footer {
     margin-top: 8rem;
     padding: 4rem 2rem;
@@ -254,40 +289,34 @@ footer {
     color: #666;
 }
 
-
-/* PANTALLES GRANS */
+/* ==========================================================================
+   PANTALLES GRANS (RESPONSIVE)
+   ========================================================================== */
 @media (min-width: 768px) {
     header {
         flex-direction: row;
-        /*  desktop: logo i menú en fila */
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
     }
 
+    .hero-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
 
     header ul {
         flex-wrap: wrap;
         justify-content: flex-start;
-        /* Menú a l'esquerra com Ableton */
         gap: 1.5rem;
     }
 
-    .header-right {
-        align-self: auto;
-        /* El login es queda a sota a la dreta */
+    .grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
     }
-}
 
-.grid-cards {
-    /* Dues columnes perfectes */
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
-    /* Més espai en desktop */
-}
-
-.card {
-    padding: 5rem 4rem;
-    /* Espais molt amplis interns */
-}
+    .card {
+        padding: 5rem 4rem;
+    }
 }
