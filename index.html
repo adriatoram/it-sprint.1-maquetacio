@@ -8,16 +8,31 @@
     content="Exercici de maquetació adaptativa inspirat en el disseny d'Ableton per a IT Academy.">
   <title>Ableton - Maquetació Adaptativa i Accessible</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <h1 class="visually-hidden">Ableton - Blog</h1>
+
+  <div class="barra-notificacions">
+    <p class="notificacions">Part del contingut d'aquesta web no està en català</p>
+  </div>
+
   <header>
     <div class="header-left">
-      <a href="#" class="logo" aria-label="Ableton ">
+      <a href="#" class="logo" aria-label="Ableton">
         <img src="https://i.pinimg.com/1200x/16/38/ff/1638ff96adba5a5dab27feea86905c03.jpg" alt="Logo d'Ableton">
       </a>
-      <nav aria-label="Navegació principal">
-        <ul>
+
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="visually-hidden">Obre el menú de navegació</span>
+      </button>
+
+      <nav aria-label="NAvegació principal" id="main-nav">
+        <ul class="nav-box">
           <li> <a href="#">Live</a></li>
           <li> <a href="#">Push</a></li>
           <li> <a href="#">Note</a></li>
@@ -32,25 +47,26 @@
     </div>
   </header>
 
-  <nav class="submenu" aria-label="Navegació del BLog">
-    <div class="submenu-container">
-      <a href="#" class="submenu-title"> All posts</a>
-      <ul class="submenu-links">
-        <li> <a href="#" class="active"></a></li>
-        <li> <a href="#">Artists</a></li>
-        <li> <a href="#">News</a></li>
-        <li> <a href="#">Downloads</a></li>
-        <li> <a href="#">Loop</a></li>
-        <li> <a href="#">Vídeos</a></li>
-      </ul>
-    </div>
-  </nav>
 
   <main aria-label="Contingut principal de l'aplicació web adaptativa">
 
     <section class="hero-section">
-      <h2 class="section-title">Novetats d'Ableton</h2>
+      <div class="title-submenu-wrapper">
+        <h2 class="section-title">Novetats d'Ableton</h2>
 
+        <nav class="submenu" aria-label="Navegació del BLog">
+          <div class="submenu-container">
+            <ul class="submenu-links">
+              <li> <a href="#" class="active">All posts</a></li>
+              <li> <a href="#">Artists</a></li>
+              <li> <a href="#">News</a></li>
+              <li> <a href="#">Downloads</a></li>
+              <li> <a href="#">Loop</a></li>
+              <li> <a href="#">Vídeos</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
       <div class="hero-grid">
         <article class="hero-card">
           <div class="hero-card-image">
@@ -129,35 +145,6 @@
       </div>
     </section>
 
-    <!-- <section class="cards-container">
-      <h2>Els nostres serveis</h2>
-      <div class="grid-cards">
-        <article class="card">
-          <div class="card-image-wrapper">
-            <img src="https://images.pexels.com/photos/12752470/pexels-photo-12752470.jpeg"
-              alt="Un home amb una taula de mescles">
-          </div>
-          <div class="card-content">
-            <span class="card-category">Loop</span>
-            <h3>Servei 1</h3>
-            <p>Descripció curta del servei que oferim en aquesta cel·la.</p>
-            <a href="#">Més informació</a>
-          </div>
-        </article> 
-
-        <article class="card">
-          <div class="card-image-wrapper">
-            <img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg" alt="Un XML d'estudi de música">
-          </div>
-          <div class="card-content">
-            <span class="card-category">Stories</span>
-            <h3>Servei 2</h3>
-            <p>Descripció curta del servei que oferim en aquesta cel·la.</p>
-            <a href="#">Més informació</a>
-          </div>
-        </article>
-      </div>
-    </section> -->
 
   </main>
   <footer class="main-footer">
@@ -170,7 +157,8 @@
         <h3> Sign up to our newsletter</h3>
         <p>enter your email address to stay up to date with the latest offers, tutorials and samples.</p>
         <form class="newsletter-form">
-          <input type="email" placeholder="Email Address" required>
+          <label for="newsletter-email" class="visually-hidden">Adreça de correu electrònic</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="Email Address" required>
           <button type="submit">Sign up</button>
         </form>
       </div>
@@ -206,12 +194,16 @@
 
       <div class="footer-col region-col">
         <h3>Language and Locations</h3>
+
         <div class="selectors">
+          <label for="Language-select" class="visually-hidden">Idioma</label>
           <select id="Language-select">
-            <option value="en" selected></option>
+            <option value="en" selected>English</option>
             <option value="de">Deutsch</option>
             <option value="fr">Français</option>
           </select>
+
+          <label for="Location-select" class="visually-hidden">Ubicació</label>
           <select id="Location-select">
             <option value="es" selected>Spain</option>
             <option value="us">United States</option>
@@ -236,6 +228,15 @@
 
     </section>
   </footer>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('#main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
 </body>
 
 </html>

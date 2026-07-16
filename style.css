@@ -18,8 +18,9 @@
 }
 
 html {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.5;
+    font-size: 10px;
     background-color: var(--color-bg);
     color: var(--color-text);
     -webkit-font-smoothing: antialiased;
@@ -32,21 +33,39 @@ header {
     align-items: flex-start;
     gap: 1rem;
     border-bottom: 2px solid var(--color-light-gray);
-    padding: 1.2rem 1.5rem;
+    padding: 2rem 4rem;
     background-color: var(--color-bg);
+}
+
+.barra-notificacions {
+    width: 100%;
+    background-color: lightgray;
+    border-bottom: 1px solid var(--color-light-gray);
+    text-align: center;
+}
+
+.notificacions {
+    display: block;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.5rem 0.6rem;
+    margin: 0;
+    color: var(--color-text);
 }
 
 .header-left {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
 }
+
+
 
 .logo {
     height: 25px;
     width: auto;
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     color: var(--color-text);
     text-decoration: none;
     letter-spacing: -0.03em;
@@ -60,18 +79,19 @@ header {
 header ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     font-weight: 600;
-    font-size: 0.35rem;
+    font-size: 1.2rem;
 }
 
 header a {
     color: var(--color-text);
     text-decoration: none;
     white-space: nowrap;
-    font-size: 0.35rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 800;
     transition: color 0.15s ease;
+    letter-spacing: -0.07em;
 }
 
 header a:hover,
@@ -80,49 +100,107 @@ header a.active {
 }
 
 .header-right .login-link {
-    font-size: 0.35rem;
+    font-size: 1rem;
     color: var(--color-text);
     text-decoration: none;
 }
 
-.submenu {
+.nav-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle-bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-text);
+}
+
+#main-nav {
+    display: none;
+    width: 100%;
+}
+
+#main-nav.is-open {
+    display: block;
+}
+
+.title-submenu-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    /* Perquè la base del text estigui alineada */
+    gap: 4rem;
+    /* Espai entre el títol i el submenú */
     border-bottom: 1px solid var(--color-light-gray);
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 1rem 1.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+
+}
+
+.submenu {
+    border: none;
+    background-color: transparent;
+    padding: 0;
 }
 
 .submenu-container {
-    max-width: 1300px;
-    margin: 0 auto;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    gap: 1.5rem;
 }
 
 .submenu-title {
-    font-weight: 600;
-    font-size: 0.35rem;
+    font-weight: 500;
+    font-size: 1rem;
     text-decoration: none;
     color: #ff4500;
+    letter-spacing: -0.07em;
 }
 
 .submenu-links {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 3rem;
 }
 
 .submenu-links a {
     text-decoration: none;
-    color: var(--color-text);
-    font-size: 0.35rem;
-    font-weight: 600;
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
 }
 
 .submenu-links a:hover,
 .submenu-links a.active {
     color: #ff4500;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* 
@@ -131,7 +209,7 @@ header a.active {
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 5rem 5rem 0 5rem;
 }
 
 .hero-section {
@@ -141,8 +219,9 @@ main {
 }
 
 .section-title {
-    font-size: 1rem;
-    font-weight: 700;
+
+    font-size: 2.5rem;
+    font-weight: 600;
     margin-bottom: 2rem;
     letter-spacing: -0.02em;
 }
@@ -175,30 +254,33 @@ main {
 
 .card-tag,
 .hero-category {
-    font-size: 0.35rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 800;
     text-transform: uppercase;
+    letter-spacing: -0.07em;
     color: var(--color-accent);
 }
 
 .hero-card h3 {
-    font-size: 0.75rem;
+    font-size: 1.3rem;
     font-weight: 700;
     line-height: 1.3;
+    letter-spacing: -0.07em;
     color: var(--color-text);
 }
 
 .hero-card p {
-    font-size: 0.45rem;
+    font-size: 1rem;
     color: #555555;
     line-height: 1.5;
 }
 
-/* 🌟 CONFIGURACIÓ NETA DEL BOTÓ BLAU SÒLID ("Carga más") */
+/* CONFIGURACIÓ DEL BOTÓ "Carga más" */
 .load-more-container {
     display: flex;
     justify-content: center;
     margin-top: 3.5rem;
+    margin-bottom: 1.1rem;
     width: 100%;
 }
 
@@ -206,9 +288,8 @@ main {
     background-color: #0000ff;
     color: #ffffff;
     border: none;
-    padding: 0.8rem 2.5rem;
-    font-size: 0.55rem;
-    /* Adaptat a la teva escala */
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.15s ease;
@@ -222,23 +303,23 @@ main {
 .cards-container {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .cards-container h2 {
     font-size: clamp(1.8rem, 4vw, 2.8rem);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     font-weight: 700;
 }
 
 .grid-cards {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .card {
-    padding: 3rem 2rem;
+    padding: 2rem 1rem;
     background-color: var(--color-light-gray);
     display: flex;
     flex-direction: column;
@@ -252,12 +333,12 @@ main {
 }
 
 .card h3 {
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
 .card p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #333;
     line-height: 1.6;
 }
@@ -284,7 +365,7 @@ main {
 /* FOOTER*/
 
 .main-footer {
-    padding: 5rem 2rem;
+    padding: 2.5rem 2rem 5rem 2rem;
     border-top: 2px solid var(--color-light-gray);
 }
 
@@ -303,7 +384,7 @@ main {
 }
 
 .footer-col h3 {
-    font-size: 0.7rem;
+    font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -319,13 +400,18 @@ main {
 .footer-col ul li a {
     text-decoration: none;
     color: var(--color-text);
-    font-size: 0.55rem;
+    font-size: 1.2rem;
     font-weight: 500;
-    transition: var(--color-accent);
+    transition: color 0.15s ease;
 }
 
+.footer-col ul li a:hover {
+    color: var(--color-accent);
+}
+
+
 .region-col h3 {
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0.8rem;
 }
@@ -334,7 +420,7 @@ main {
     background-color: var(--color-light-gray);
     border: none;
     padding: 0.25rem 0.5rem;
-    font-size: 0.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--color-text);
     cursor: pointer;
@@ -372,7 +458,7 @@ main {
 .Legal-links li a {
     text-decoration: none;
     color: var(--color-text);
-    font-size: 0.35rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
@@ -381,14 +467,14 @@ main {
 }
 
 .footer-bottom-brand {
-    font-size: 0.65rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--color-text);
 }
 
 
 .newsletter-col p {
-    font-size: 0.65rem;
+    font-size: 1.2rem;
     line-height: 1.3;
     margin-bottom: 1.2rem;
     color: var(--color-text);
@@ -404,7 +490,7 @@ main {
     padding: 0.3rem 0.7rem;
     background-color: var(--color-light-gray);
     border: none;
-    font-size: 0.25rem;
+    font-size: 1.2rem;
     color: var(--color-text);
     outline: none;
     height: 24px;
@@ -415,7 +501,7 @@ main {
     color: #ffffff;
     border: none;
     padding: 0 1.1rem;
-    font-size: 0.35rem;
+    font-size: 1.2rem;
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.15s ease;
@@ -446,6 +532,19 @@ main {
         flex-wrap: wrap;
         justify-content: flex-start;
         gap: 1.5rem;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    #main-nav {
+        display: block;
+        width: auto;
+    }
+
+    .nav-box {
+        flex-direction: row;
     }
 
     .grid-cards {
